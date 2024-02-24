@@ -17,6 +17,9 @@
 body {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-rgb)); /* default if image does not load */
+}
+
+main.welcome {
   background-image: url("../public/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
