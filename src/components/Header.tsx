@@ -237,7 +237,7 @@ function Avatar({
 }) {
   return (
     <Link
-      href="/"
+      href="/home"
       aria-label="Home"
       className={clsx(className, 'pointer-events-auto')}
       {...props}
@@ -257,7 +257,7 @@ function Avatar({
 }
 
 export function Header() {
-  let isHomePage = usePathname() === '/'
+  let isHomePage = usePathname() === '/home'
 
   let headerRef = useRef<React.ElementRef<'div'>>(null)
   let avatarRef = useRef<React.ElementRef<'div'>>(null)

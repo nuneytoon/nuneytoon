@@ -1,0 +1,176 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Matthew Nunemacher',
+  date: '2023-09-08',
+  title: 'Top 5 Frameworks to Kickstart Your React Web Application',
+  description:
+    "React has undoubtedly become one of the most popular JavaScript libraries for building user interfaces. Its component-based architecture, virtual DOM, and reusability make it a favorite choice among developers. However, to make the most of React and streamline the development process, incorporating additional frameworks can significantly enhance your productivity. In this blog post, we'll explore the top five frameworks to get started with for a React web application, empowering you to build scalable, efficient, and feature-rich web applications.",
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+React has undoubtedly become one of the most popular JavaScript libraries
+for building user interfaces. Its component-based architecture, virtual
+DOM, and reusability make it a favorite choice among developers. However,
+to make the most of React and streamline the development process,
+incorporating additional frameworks can significantly enhance your
+productivity. In this blog post, we'll explore the top five frameworks to
+get started with for a React web application, empowering you to build
+scalable, efficient, and feature-rich web applications.
+
+## [Next.js](https://nextjs.org/)
+
+Next.js is a powerful framework built on top of React that enables
+server-side rendering (SSR) and static site generation (SSG). It
+simplifies the creation of dynamic and performant web applications by
+providing features such as server-side rendering, automatic code splitting,
+and optimized routing. Next.js comes with built-in support for TypeScript,
+CSS modules, and API routes, making it a versatile framework for building
+both simple websites and complex applications. Its robust ecosystem and
+seamless deployment options make it an excellent choice for React
+developers.
+
+## [React Query](https://tanstack.com/query/latest/docs/framework/react/overview)
+
+React Query is a powerful data fetching and caching library designed
+specifically for React applications. It provides a declarative way to fetch,
+manage, and synchronize data across components, making it easier to handle
+complex data requirements. React Query offers features like caching,
+background data synchronization, pagination, and optimistic updates,
+resulting in improved performance and a better user experience. By
+integrating React Query into your React application, you can efficiently
+manage data without the need for a separate state management library.
+
+```tsx
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
+
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Example />
+    </QueryClientProvider>
+  )
+}
+
+function Example() {
+  const { isPending, error, data } = useQuery({
+    queryKey: ['repoData'],
+    queryFn: () =>
+      fetch('https://api.github.com/repos/TanStack/query').then((res) =>
+        res.json(),
+      ),
+  })
+
+  if (isPending) return 'Loading...'
+
+  if (error) return 'An error has occurred: ' + error.message
+
+  return (
+    <div>
+      <h1>{data.name}</h1>
+      <p>{data.description}</p>
+      <strong>👀 {data.subscribers_count}</strong>{' '}
+      <strong>✨ {data.stargazers_count}</strong>{' '}
+      <strong>🍴 {data.forks_count}</strong>
+    </div>
+  )
+}
+```
+
+## [React Router](https://reactrouter.com/en/main)
+
+Routing is an essential aspect of web development, and React Router is the
+go-to framework for implementing routing in React applications. It provides
+a declarative approach to define routes, allowing you to navigate between
+different views or components based on the URL. React Router offers a rich
+set of features, including nested routing, route parameters, and
+code-splitting, enabling you to create complex navigation structures with
+ease. By integrating React Router into your React application, you can
+ensure a smooth user experience with minimal effort.
+
+## [Material UI](https://mui.com/material-ui/)
+
+If you're looking to build visually appealing and user-friendly interfaces,
+Material UI is the framework for you. It is a popular UI component library
+that implements Google's Material Design guidelines. With a wide range of
+pre-built components, Material UI simplifies the process of creating
+beautiful and responsive user interfaces. Its theming capabilities and
+customizability allow you to match your application's design system
+seamlessly. Material UI's rich documentation and active community make it
+an ideal choice for developers seeking to enhance the UI of their React
+applications.
+
+## [Storybook](https://storybook.js.org/)
+
+Storybook is a powerful development environment and UI component explorer
+for React applications. It enables you to develop components in isolation,
+promoting reusability and ensuring that they work as intended in different
+scenarios. With Storybook, you can create a visual library of components,
+document their usage, and showcase different states and variations. It also
+facilitates collaboration among designers, developers, and other
+stakeholders, as they can interact with and provide feedback on individual
+components. By incorporating Storybook into your workflow, you can streamline
+your component development process and create more robust React applications.
+
+```tsx
+import Task from './Task'
+
+export default {
+  component: Task,
+  title: 'Task',
+  tags: ['autodocs'],
+}
+
+export const Default = {
+  args: {
+    task: {
+      id: '1',
+      title: 'Test Task',
+      state: 'TASK_INBOX',
+    },
+  },
+}
+
+export const Pinned = {
+  args: {
+    task: {
+      ...Default.args.task,
+      state: 'TASK_PINNED',
+    },
+  },
+}
+
+export const Archived = {
+  args: {
+    task: {
+      ...Default.args.task,
+      state: 'TASK_ARCHIVED',
+    },
+  },
+}
+```
+
+These top five frameworks—Next.js, React Query, React Router, Material UI, and
+Storybook—provide invaluable tools and enhancements for building powerful
+React web applications. From server-side rendering and data fetching to routing,
+UI design, and component development, these frameworks cover a wide range of
+essential aspects. By leveraging their capabilities, you can supercharge your
+React development workflow, increase productivity, and deliver exceptional user
+experiences. Experiment with these frameworks and discover the ones that best
+fit your project requirements.
+
+## Edit:
+
+React Query has since been rebranded to TanStack Query.
