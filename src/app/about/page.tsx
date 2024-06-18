@@ -70,30 +70,40 @@ export default function About() {
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             {/* TODO: continue updating template with real information */}
             <p>
-              I’ve loved making things for as long as I can remember, and wrote
-              my first program when I was 6 years old, just two weeks after my
-              mom brought home the brand new Macintosh LC 550 that I taught
-              myself to type on.
+              I&apos;ve loved making things for as long as I can remember, and
+              wrote my first program when I was 11 years old, while in middle
+              school to prank my class into thinking the shared computer was
+              broken, so I could monopolize it to play online games.
             </p>
             <p>
-              The only thing I loved more than computers as a kid was space.
-              When I was 8, I climbed the 40-foot oak tree at the back of our
-              yard while wearing my older sister’s motorcycle helmet, counted
-              down from three, and jumped — hoping the tree was tall enough that
-              with just a bit of momentum I’d be able to get to orbit.
+              The only thing I loved more than computers as a kid was grilled
+              cheese. When I was 6, it was the <em>only</em> food I would eat -
+              for breakfast, lunch, and dinner. It got so bad, my mom actually
+              took me to the doctor concerned about my nutrition, but the doc
+              sided with me and told her as long as I was eating, I would
+              probably grow out of it. The phase lasted longer than anyone
+              expected, but eventually my love of dairy and creamy delicious
+              foods evolved into an obsession with ice cream.
             </p>
             <p>
-              I spent the next few summers indoors working on a rocket design,
-              while I recovered from the multiple surgeries it took to fix my
-              badly broken legs. It took nine iterations, but when I was 15 I
-              sent my dad’s Blackberry into orbit and was able to transmit a
-              photo back down to our family computer from space.
+              I once ended up eating an entire ice cream cake by myself when my
+              boss challenged my love affair with the delicious treat at an
+              office party. From there, I wanted to learn everything I could
+              about what went into my favorite food! I learned that ice cream
+              was tricky to make with the right consistency and quality
+              ingredients &#40;at least from home&#41;, but its exotic cousin,
+              gelato, was a little bit easier.
             </p>
             <p>
-              Today, I’m the founder of Planetaria, where we’re working on
-              civilian space suits and manned shuttle kits you can assemble at
-              home so that the next generation of kids really <em>can</em> make
-              it to orbit — from the comfort of their own backyards.
+              Then, a pandemic hit, and the world shut down. I was living in New
+              York City at the time, and like everyone else, I was looking for
+              ways to stay hopeful and entertained at home. Making bread became
+              a trend for many new and aspiring bakers, which gave me
+              inspiration to continue making things of my own. I did my research
+              and gelato it was &#40;after some failed attempts at cocktails and
+              becoming the world&apos;s greatest bartender&#41;. I haven&apos;t
+              found a way to connect gelato to my love of making software just
+              yet, but I will!
             </p>
           </div>
         </div>
