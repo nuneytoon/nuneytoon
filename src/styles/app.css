@@ -1,0 +1,116 @@
+main.welcome {
+  animation: spiral-out 4s ease-out;
+  background-image: url('../images/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+@keyframes spiral-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.introduction {
+  background: #4992ad;
+  height: 500px;
+  margin: auto;
+  position: relative;
+  transform: perspective(3000px);
+  transform-style: preserve-3d;
+  width: 500px;
+}
+
+.introduction::before {
+  border-radius: 500px;
+  box-shadow:
+    0 0 20px 0px #fff,
+    0 0 0 30px #cf331f,
+    0 0 20px 30px #fff,
+    0 0 0 60px #cf331f,
+    0 0 20px 60px #fff,
+    0 0 0 90px #cf331f,
+    0 0 20px 90px #fff,
+    0 0 0 120px #cf331f,
+    0 0 20px 120px #fff,
+    0 0 0 150px #cf331f !important;
+  content: '';
+  display: block;
+  height: 98%;
+  left: 1%;
+  position: relative;
+  top: 1%;
+  transform: translateZ(20px);
+  width: 98%;
+}
+
+.introduction::after {
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: zoom;
+  animation-timing-function: ease-in-out;
+  background: url('../../public/bugs-bunny.svg') no-repeat center/contain;
+  bottom: -30%;
+  content: '';
+  display: block;
+  filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.5));
+  height: 150%;
+  left: 20%;
+  position: absolute;
+  transform: rotateX(-10deg);
+  transform-origin: center 80%;
+  width: 80%;
+}
+
+@keyframes zoom {
+  0% {
+    filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 0));
+    transform: rotateX(-10deg) scale(0.66);
+  }
+
+  40% {
+    filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.5));
+    transform: rotateZ(-10deg) rotateX(-10deg) scale(1);
+  }
+
+  60% {
+    filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.5));
+    transform: rotateZ(-10deg) rotateX(-10deg) scale(1);
+  }
+
+  100% {
+    filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 0));
+    transform: rotateX(-10deg) scale(0.66);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes zoom {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .introduction::after {
+    animation-iteration-count: 1;
+  }
+}
